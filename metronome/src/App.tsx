@@ -14,11 +14,14 @@ function App() {
     const timer = useRef<number>();
 
     function playSound() {
-        counter++;
-        if(counter % 4 == 0)
+        if(counter == 0)
+            click2Audio.play()
+        else if(counter % 4 == 0)
             click2Audio.play();
         else
             click1Audio.play()
+
+        counter++;
     }
 
     useEffect(() => {
